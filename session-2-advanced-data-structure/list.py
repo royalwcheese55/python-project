@@ -43,13 +43,13 @@ print(numbers)
 numbers = [1, 2, 3]
 numbers.extend([4, 5])
 print(numbers)
-print([1,2,3] + [4, 5] + [6, 7])
+print([1, 2, 3] + [4, 5] + [6, 7])
 numbers.extend('ab')
 print(numbers)
 
 # insert element
 numbers = [1, 2, 3]
-numbers.insert(0, 0) #[0, 1, 2, 3]
+numbers.insert(0, 0)  # [0, 1, 2, 3]
 print(numbers)
 numbers.insert(1, 999)
 print(numbers)
@@ -70,7 +70,7 @@ numbers.reverse()
 print(numbers)
 
 # sort
-numbers = [4,1,5,2,1]
+numbers = [4, 1, 5, 2, 1]
 
 # in-place sorting
 # numbers.sort()
@@ -79,9 +79,9 @@ numbers = [4,1,5,2,1]
 print(sorted(numbers), numbers)
 
 # combine multiple array
-array_1 = [1,2,3]
-array_2 = [4,5,6]
-array_3 = [7,8,9]
+array_1 = [1, 2, 3]
+array_2 = [4, 5, 6]
+array_3 = [7, 8, 9]
 
 combined = [*array_1, *array_2, *array_3]
 print(combined)
@@ -108,7 +108,7 @@ for i in range(10):
 
 print(numbers)
 
-#simple comprehension
+# simple comprehension
 squares = [i**2 for i in range(10)]
 print(squares)
 
@@ -122,10 +122,6 @@ labels = ['even' if n % 2 == 0 else 'odd' for n in range(10)]
 print(labels)
 
 # nested comprehension
-matrix = [[1,2,3], [4,5,6], [7,8,9]]
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flat = [num for row in matrix for num in row]
 print(flat)
-
-
-
-
