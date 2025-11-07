@@ -4,14 +4,36 @@
 ## Concept Questions
 
 * What is the difference between mutable and immutable data types in Python?
+mutable is changable after creation like a list, immutable is unchangable once created.
+
 * What's the difference between a list and a tuple in Python?
+List → mutable, uses [sqaure brackes], slower but flexible.
+Tuple → immutable, uses (parentheses), faster and safer for fixed data。
+
 * What's the difference between `list.append()`, `list.extend()`, and `list.insert()`?
+append: Adds one item to the end of the list.
+extend: Adds each element from another iterable (like a list, tuple, or string) to the end of the list. Unlike append(), it doesn’t nest the object — it unpacks it.
+insert: Inserts a single item at a specific position.
+
 * Explain the difference between shallow copy and deep copy between `list.copy()`, `list[:]`, and `copy.deepcopy()`
+.copy() just duplicate the shells, core is shared, deepcopy() duplicates everything and is fully independent. changes in one do not affect the original list.
+
 * What are the advantages and disadvantages of using set comprehensions vs converting a list comprehension to a set?
+set comprehension is slightly faster and more readable and use less memory basically more efficient, the disadvantage is that you can't use the list afterward.
+
 * What's the time complexity difference between checking membership (`in` operator) in a list vs a set?
+list use a linear search so O(n) the bigger the list the longer the search.  set use a hash table internally python compute the hash value of x and jump to location so O(1) 
+
 * Why are tuples immutable but you can still modify a list inside a tuple?
+Tuple immutability = its structure can’t change. mutable objects stored in a tuple do not lose their mutability e.g. you can still modify inner lists using list methods
+
 * What will `my_list[::2]`, `my_list[::-1]`, and `my_list[1::3]` return for `my_list = [0,1,2,3,4,5,6,7,8,9]`?
+02468
+9876543210
+147
+
 * What's the difference between `remove()`, `pop()`, and `del` for lists?
+
 
 ---
 

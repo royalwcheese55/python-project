@@ -2,14 +2,22 @@
 
 ## Concept Questions
 * What is Python's main characteristic regarding syntax compared to other programming languages?
+python uses indentation instead of braces. it's clean and readable
 * What are the basic data types available in Python?
+integer float boolean str/ set tuple list dict
 * Why is indentation important in Python?
+it helps py as a readable and clean file and it is syntax requirement, and control the code structure
 * What happens when you try to mix incompatible data types in an operation?
+typeerror, python requires compatible data type
 * What is Git Flow?
+a structured branching strategy that separates development, releases, and fixes to keep code organized and stable.
 * Explain the difference between `==` and `is` operators
+== check if its the same value/ `is` check if its the same object in memory
 * What's the difference between implicit and explicit type conversion?
+implicit: python do it automatically/ explicit: you have to do it manually using built in functions
 * What's the difference between `if x:` and `if x == True:`?
-
+if x: → checks whether x is truthy (used 99% of the time).
+if x == True: → checks if x literally equals the boolean True — rarely needed and less flexible.
 ---
 
 ## Coding Questions
