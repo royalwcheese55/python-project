@@ -27,6 +27,8 @@ print(is_valid_parentheses("()"))
 print(is_valid_parentheses("()[]{}"))
 
 
+def show_info(**kwargs):
+    print(**kwargs)
 
 
 

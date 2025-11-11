@@ -71,3 +71,21 @@ print(fibonacci(3))
 # fib(2) + fib(1)
 # # ->
 # fib(1) + fib(1)
+
+x = "awesome"
+
+def myfunc():
+  print("Python is " + x)
+
+myfunc()
+
+
+x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+
+print("Python is " + x)
