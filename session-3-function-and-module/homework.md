@@ -3,16 +3,58 @@
 ## Concept Questions
 
 * What is a lambda function, and how is it different from a regular function in Python?
-* What is the difference between `*args` and `**kwargs` in function definitions?
-* What is LEGB? Explain LEGB rule with a code example
-* What is a closure in Python? How is it different from a regular nested function?
-* What is the purpose of `if __name__ == "__main__":`?
-* Can you modify a global variable inside a function without using the `global` keyword?
-* In what order must you define parameters in a function signature?
-* What is the difference between the `global` and `nonlocal` keywords?
-* What is a common pitfall when using mutable default arguments?
-* What is a higher-order function? Give examples of built-in higher-order functions
+lambda is a built in function in python also called anonymous function, it is short and single expressions and it's implicitly returned.
 
+* What is the difference between *args and **kwargs in function definitions?
+*args handles extra positional arguments as a tuple, and **kwargs handles extra keyword arguments as a dictionary. it handle named arguments in a function.
+
+* What is LEGB? Explain LEGB rule with a code example
+Local-Enclosing-Global-Built in
+the order python looks up variable names
+
+x = "global"
+
+def outer():
+    x = "enclosing"
+    
+    def inner():
+        x = "local"
+        print(x)  # LEGB lookup happens here
+    inner()
+
+outer()
+output will be local
+
+* What is a closure in Python? How is it different from a regular nested function?
+A closure is a nested function that captures variables from its enclosing scope and remembers them even after the outer function has finished executing
+different from a normal nested function because it preserves state between calls
+
+* What is the purpose of `if __name__ == "__main__":`?
+is used to control the execution of code when a Python file is run directly vs. when it is imported as a module.
+
+* Can you modify a global variable inside a function without using the `global` keyword?
+No, you can’t reassign a global variable inside a function without using the global keyword — Python treats that variable as local. But you can modify a mutable global object (like a list or dict) without declaring it global, since you’re changing the object’s contents, not the reference.”
+
+* In what order must you define parameters in a function signature?
+1️⃣ Positional (or required) arguments  
+2️⃣ *args (variable positional arguments)  
+3️⃣ Keyword-only arguments  
+4️⃣ **kwargs (variable keyword arguments)
+def func(a, b, *args, c, d=10, **kwargs):
+    print(a, b, args, c, d, kwargs)
+
+* What is the difference between the `global` and `nonlocal` keywords?
+global modifies a variable at the module level,
+while nonlocal modifies a variable in an enclosing (but non-global) scope.
+nonlocal is mainly used inside nested functions, often in closures.”
+
+* What is a common pitfall when using mutable default arguments?
+A common pitfall is using a mutable object (like a list or dictionary) as a default argument in a function definition.
+Because default arguments are evaluated only once—when the function is defined, not each time it’s called—the same mutable object is reused across all calls.
+
+* What is a higher-order function? Give examples of built-in higher-order functions
+is one that either takes another function as input or returns a function as output.
+Built-in examples include map(), filter(), reduce(), and sorted().”
 
 ---
 
@@ -34,7 +76,10 @@ The Fibonacci sequence is a series of numbers where each number is the sum of th
 - Hint: Consider using memoization/caching to optimize your solution
 
 **Function Signature:**
-```python
+**Problem:** Write a recursive function to calculate the nth Fibonacci number. 
+**Description:** The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. - Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... - Formula: F(n) = F(n-1) + F(n-2), where F(0) = 0 and F(1) = 1 
+**Requirements:** - Must use recursion - Must be efficient enough to handle large values (e.g., n = 50 or higher) without timing out - Time complexity should be O(n), not O(2^n) - Hint: Consider using memoization/caching to optimize your solution **Function Signature:**
+python
 def fibonacci(n: int) -> int:
     """
     Calculate the nth Fibonacci number using optimized recursion.
@@ -58,7 +103,6 @@ def fibonacci(n: int) -> int:
         12586269025
     """
     pass
-```
 
 ---
 

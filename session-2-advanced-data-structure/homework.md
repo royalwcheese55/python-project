@@ -19,7 +19,6 @@ insert: Inserts a single item at a specific position.
 .copy() just duplicate the shells, core is shared, deepcopy() duplicates everything and is fully independent. changes in one do not affect the original list.
 
 * What are the advantages and disadvantages of using set comprehensions vs converting a list comprehension to a set?
-
 set comprehension is slightly faster and more readable and use less memory basically more efficient, the disadvantage is that you can't use the list afterward.
 
 * What's the time complexity difference between checking membership (`in` operator) in a list vs a set?
