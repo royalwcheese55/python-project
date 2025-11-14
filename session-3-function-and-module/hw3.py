@@ -24,5 +24,5 @@ def reverse_string(s: str) -> str:
         return s
     return reverse_string(s[1:]) + s[0]
 
-print(reverse_string("nigga"))
+
     

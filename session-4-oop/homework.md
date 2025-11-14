@@ -3,16 +3,41 @@
 ## Concept Questions
 
 * What are the four principles of OOP?
-* What's the difference between `__str__` and `__repr__` magic methods?
-* How do magic methods like `__eq__` affect object comparison?
-* Explain the difference between `@classmethod` and `@staticmethod`
-* What are property decorators in Python?
-* What's the difference between public, protected (`_`), and private (`__`) attributes?
-* What's Singleton pattern? How to implement it?
-* What's Factory pattern? How to implement it?
-* What is the `self` parameter?
-* What are abstract base classes (ABC) in Python?
+Encapsulation	Keep data safe and grouped
+Abstraction	  Show only what’s needed
+Inheritance	  Reuse code from parent classes
+Polymorphism	One name, many forms (e.g., speak() works differently for Dog and Cat)
 
+* What's the difference between `__str__` and `__repr__` magic methods?
+__str__ returns a readable, user-friendly description of the object, while __repr__ returns a precise, developer-oriented representation used for debugging.
+
+* How do magic methods like `__eq__` affect object comparison?
+By default, Python compares object identities, but overriding __eq__ lets us compare by value.
+
+* Explain the difference between `@classmethod` and `@staticmethod`
+A @classmethod takes cls and can modify class variables,
+while a @staticmethod is a utility function inside a class that doesn’t access instance or class data.
+
+* What are property decorators in Python?
+is used to turn a method into a read-only attribute —
+so you can access it like a variable, but it actually runs code behind the scenes.
+@property, @<name>.setter, @<name>.deleter
+
+* What's the difference between public, protected (`_`), and private (`__`) attributes?
+Public attributes are freely accessible, _protected ones signal ‘for internal use,’ and __private ones are name-mangled to prevent accidental external access
+
+* What's Singleton pattern? How to implement it?
+A Singleton ensures only one instance of a class exists in memory.  you can implement it by overriding __new__, using a decorator, or defining a custom metaclass.
+
+* What's Factory pattern? How to implement it?
+The Factory Pattern is a creational design pattern that provides a way to create objects without exposing the creation logic to the client. we call a factory method that decides which subclass or object to return based on input or context.
+
+* What is the `self` parameter?
+To refer to instance attributes and methods inside the class.
+
+* What are abstract base classes (ABC) in Python?
+define a common interface and enforce that subclasses implement specific methods.
+They’re created using the abc module with the ABC base class and the @abstractmethod decorator.
 ---
 
 ## Coding Questions
