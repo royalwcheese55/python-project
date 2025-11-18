@@ -15,7 +15,7 @@
 ---
 
 ## Coding Questions
-### Coding Problem 1: Docorator
+### Coding Problem 1: Decorator
 
 **Problem:**  
 Decorator to cache any function return and log hits/misses
