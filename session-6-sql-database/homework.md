@@ -3,11 +3,34 @@
 ## Concept Questions
 
 - What are primary keys and foreign keys? How are they used in relational databases?
+p: unique identifier in a table. f: a reference key of primary key in another table
+
 - What is the difference between INNER JOIN, LEFT JOIN, and FULL OUTER JOIN?
+inner: return the match result from two table.
+left: return all left and matcing right
+full: return all
+
 - What is normalization?
+organize tables to remove duplicates and keep data consistent.
+
 - What are the different types of database relationships (1:1, 1:many, many:many) and how do you implement them in SQL?
+1:1 → FK as PK
+1:N → FK on the “many” side
+M:N → Bridge table with two FKs
+
 - What are transactions and isolation levels? Explain the problems each isolation level solves.
+Read Uncommitted: dirty reads allowed
+Read Committed: no dirty reads
+Repeatable Read: no dirty reads, no non-repeatable reads
+Serializable: no anomalies at all
+A transaction is a group of SQL operations that execute as one atomic unit — either all succeed or all fail.
+
 - What's the difference between PRIMARY KEY, UNIQUE, and FOREIGN KEY constraints?
+PRIMARY KEY → unique + not null + identifies the row
+UNIQUE → unique but can allow nulls
+FOREIGN KEY → links tables and enforces valid relationships
+
+
 ---
 
 ## Coding Challenge 1: SQL Practice
