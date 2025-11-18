@@ -2,16 +2,37 @@
 
 ## Concept Questions
 - What is a decorator in Python, and where is it used?
-- What's the difference between a generator and a regular function that returns a list?
-- When would you choose generators over lists, and what are the memory implications?
-- Explain the difference between threading, multiprocessing, and asyncio in Python
-- What is the Global Interpreter Lock (GIL)? How does it affect threading and multiprocessing?
-- When to use threading, asyncio, multiprocess?
-- What are CPU-bound vs IO-bound tasks?
-- What's the difference between yield and return in a function
-- What's the difference between using open() with explicit close() vs using the with statement
-- How to handle exceptions? Why is exception handling important?
+its a higher order function to help reuse the code, it wraps another function or method to modify its behavior without changing its code.
 
+- What's the difference between a generator and a regular function that returns a list?
+generator return one at a time using yield, return just return the whole list.
+
+- When would you choose generators over lists, and what are the memory implications?
+when you want faster and less memory, generator use O(n)
+
+- Explain the difference between threading, multiprocessing, and asyncio in Python
+threading: Runs multiple threads within one process. Good for I/O-bound tasks (network, disk).
+multiprocessing: Runs multiple separate processes, each with its own Python interpreter and memory. Achieves true parallelism, best for CPU-bound tasks (heavy computation).
+asyncio: Single-threaded, single-process concurrency using an event loop. use await.
+
+- What is the Global Interpreter Lock (GIL)? How does it affect threading and multiprocessing?
+only one thread can execute Python bytecode at a time, even on multi-core CPUs.
+It simplifies memory management but limits parallel execution. no affect on multiprocessing but force threading to take turn.
+
+- When to use threading, asyncio, multiprocess?
+Use threading when you have a small–medium number of I/O-bound tasks
+Use asyncio when you need to handle lots of concurrent I/O (e.g.,files need to be read, external files/ hundreds/thousands of sockets or HTTP requests)
+Use multiprocessing for CPU-bound work (heavy computation, ML, image processing)
+
+- What's the difference between yield and return in a function
+yield pause a function and return one value.
+
+- What's the difference between using open() with explicit close() vs using the with statement
+open() + close() → manual, unsafe if you forget or error occurs
+with open() → automatic cleanup, exception-safe, best practice
+
+- How to handle exceptions? Why is exception handling important?
+try/except less error, Makes code more robust, safe, and user-friendly
 ---
 
 ## Coding Questions
