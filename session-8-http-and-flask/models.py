@@ -15,9 +15,20 @@ class Customer(db.Model):
     __tablename__ = 'customers'
     
     id = Column(Integer, primary_key=True)
-    name = Column(String(100), nullable=True)
-    email = Column(String(255), unique=True, nullable=True)
-    created_at = Column(DateTime, default=datetime.now)
+    name = Column(String(100), nullable=False)
+    email = Column(String(255), unique=True, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    orders = relationship('Order', back_populates='customer',
+                          cascade='all, delete-orphan')
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "email": self.email,
+            "created_at": self.created_at.isoformat()
+        }
     
     ## Relationship
     
@@ -97,7 +108,6 @@ class OrderItem(db.Model):
     quantity = Column(Integer, nullable=False)
     unit_price = Column(Numeric(10, 2), nullable=False)
     
-    # Relationships
     order = relationship('Order', back_populates='order_items')
     product = relationship('Product', back_populates='order_items')
     

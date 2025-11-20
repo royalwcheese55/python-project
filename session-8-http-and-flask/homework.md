@@ -3,15 +3,38 @@
 ## Concept Questions
 
 - How does routing work in Flask?
-- What is restful service
-- What are the categories of HTTP status codes (1xx, 2xx, 3xx, 4xx, 5xx)? Provide examples for each.
-- What is HTTP and how does it work
-- Explain the concept of idempotency in HTTP methods
-- Explain the difference between HTTP and HTTPS
-- Design a RESTful API for a blogging platform
-- What is the MVC architecture
-- What are Flask's request objects
+Flask uses decorators to map URLs (routes) to Python functions (views).
 
+- What is restful service
+A RESTful service is a stateless, resource-based web API that uses HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations and returns data in JSON.
+
+- What are the categories of HTTP status codes (1xx, 2xx, 3xx, 4xx, 5xx)? Provide examples for each.
+1xx: Informational 100 continue sending request
+2xx: Success 200 success
+3xx: Redirect 302 found temp redirect
+4xx: Client error 404 not found
+5xx: Server error 500 internal server error
+
+- What is HTTP and how does it work
+HyperText Transfer Protocol,, communication protocal for transfer data between client and server. client send request and server run backend logic and send back response .
+
+- Explain the concept of idempotency in HTTP methods
+dempotency = repeated requests do not change the final result.
+GET, PUT, DELETE are idempotent; POST is not.
+
+- Explain the difference between HTTP and HTTPS
+http: Data is sent in plain text 
+https: ecure, encrypted version of HTTP that protects data with TLS/SSL.
+
+- Design a RESTful API for a blogging platform
+Design resources as /users, /posts, /comments, use standard HTTP verbs for CRUD, JWT for auth, and support pagination/filtering on list endpoints.
+
+- What is the MVC architecture
+model(data and logic) view(ui) controller(user input and request)
+design pattern that separates an application into three connected components
+
+- What are Flask's request objects
+the request object represents the incoming HTTP request. it holds all information about the client’s HTTP request, including method, headers, parameters, and body.
 ---
 
 ## Coding Challenge:
