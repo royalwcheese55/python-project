@@ -99,17 +99,22 @@ class Order(db.Model):
 
 
 # ========== Model 5: OrderItem (Many-to-many junction) ==========
-class OrderItem(db.Model):
-    __tablename__ = 'order_items'
+class Order(db.Model):
+    __tablename__ = 'orders'
     
     id = Column(Integer, primary_key=True)
-    order_id = Column(Integer, ForeignKey('orders.id'), nullable=False)
-    product_id = Column(Integer, ForeignKey('products.id'), nullable=False)
-    quantity = Column(Integer, nullable=False)
-    unit_price = Column(Numeric(10, 2), nullable=False)
-    
-    order = relationship('Order', back_populates='order_items')
-    product = relationship('Product', back_populates='order_items')
-    
-    def __repr__(self):
-        return f"<OrderItem(order_id={self.order_id}, product_id={self.product_id}, quantity={self.quantity})>"
+    customer_id = Column(Integer, ForeignKey('customers.id'), nullable=False)
+    order_date = Column(DateTime, default=datetime.utcnow)
+    total_amount = Column(Numeric(10, 2), nullable=False)
+    status = Column(String(50), default='pending')
+
+    customer = relationship('Customer', back_populates='orders')
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "customer_id": self.customer_id,
+            "order_date": self.order_date.isoformat(),
+            "total_amount": float(self.total_amount),
+            "status": self.status
+        }
