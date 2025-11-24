@@ -100,7 +100,6 @@ def profile():
     }
   
 @app.route('/admin-dashboard')   
-@token_required
 @role_required('admin')
 def admin_dashboard():
     payload = request.current_user
