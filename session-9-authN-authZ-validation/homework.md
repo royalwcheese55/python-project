@@ -7,11 +7,11 @@ authentication verify identity eg email + password
 authorization verify permission, happen after the authentication
 
 - What are HTTP cookies? How do they work and what are their main use cases?
-HTTP cookies are small pieces of data stored on the user’s browser, sent by a website to remember information across requests.
+small pieces of data stored on a user's computer by a website to remember information about them.
 Session Management (MOST COMMON) Used to identify logged-in users.
 
 - What are the limitations of cookies
-small size 4k, auto send with every request, security risk, browser limit, They’re mainly for small pieces of state like session IDs, not for large or sensitive data.
+small size 4kb, auto send with every request, security risk, browser limit on cookie per domain, They’re mainly for small pieces of state like session IDs, not for large or sensitive data.
 
 - What is JWT and how does it work?
 json web token, signed token used for authentication. It contains a header, payload, and signature.
@@ -31,7 +31,7 @@ into a irreversible string using a one-way cryptographic function. prevents hack
 
 - What is the access / refresh token pattern
 access token is short lived usually a jwt about 10 mins expiration, use for identification.
-refresh token is long lived and it's keeping the user logged in, it's secured and this pattern improve user experience and scalability.
+refresh token is long lived and it's keeping the user logged in, it's secured, and this pattern improve user experience and scalability.
 
 - What is the Oauth2 flow
 authorization protocol

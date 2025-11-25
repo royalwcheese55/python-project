@@ -6,7 +6,7 @@
 Flask uses decorators to map URLs (routes) to Python functions (views).
 
 - What is restful service
-A RESTful service is a stateless, resource-based web API that uses HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations and returns data in JSON.
+a style of web architecture that uses a set of constraints to allow for communication between a client and a server over a network
 
 - What are the categories of HTTP status codes (1xx, 2xx, 3xx, 4xx, 5xx)? Provide examples for each.
 1xx: Informational 100 continue sending request
@@ -24,7 +24,7 @@ GET, PUT, DELETE are idempotent; POST is not.
 
 - Explain the difference between HTTP and HTTPS
 http: Data is sent in plain text 
-https: ecure, encrypted version of HTTP that protects data with TLS/SSL.
+https: secure, encrypted version of HTTP that protects data with TLS/SSL.
 
 - Design a RESTful API for a blogging platform
 Design resources as /users, /posts, /comments, use standard HTTP verbs for CRUD, JWT for auth, and support pagination/filtering on list endpoints.
@@ -34,7 +34,7 @@ model(data and logic) view(ui) controller(user input and request)
 design pattern that separates an application into three connected components
 
 - What are Flask's request objects
-the request object represents the incoming HTTP request. it holds all information about the client’s HTTP request, including method, headers, parameters, and body.
+it holds all information about the client’s HTTP request, including method, headers, parameters, and body.
 ---
 
 ## Coding Challenge:

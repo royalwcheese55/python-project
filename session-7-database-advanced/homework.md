@@ -4,11 +4,11 @@
 
 - What's the difference between a view, materialized view, and a table? When would you use each?
 Table → real stored data
-View → virtual query, always fresh. a saved SQL query that shows data dynamically from base tables.
+View → virtual query, always fresh. a saved SQL query that shows data from base tables.
 Materialized View → stored snapshot of a query, faster but needs refresh everytime
 
 - What is ORM? Why do we need ORM?
-object relational mapping, lets you interact with a database using Python objects instead of raw SQL. let you switch between Postgres, MySQL, SQLite without changing code and write Python classes instead of SQL queries.
+object relational mapping, lest u use python object to interact with database instead of sql. let you switch between Postgres, MySQL, SQLite without changing code.
 
 - Explain the ACID properties. How do they ensure database reliability?
 atomicity: all success or all failed, no partial updates.
@@ -19,8 +19,8 @@ durability: Data is safe after commit.
 - Explain the CAP theorem.
 consistency: All nodes see the same data at the same time.
 avalability: Every request gets a response, even if it’s not the latest data.
-partition tolerance: The system continues working even if network communication between nodes fails
-you can only get two out of three.
+partition tolerance: The system continues working even if network between nodes fails
+you can only get two out of three from CAP.
 
 - When would you choose SQL over NoSQL and vice versa?
 SQL → structured data, strong consistency, complex queries
@@ -35,8 +35,8 @@ Weak consistency → no guarantee you'll get the latest data
 Eventual consistency → temporarily inconsistent, but guaranteed to converge over time
 
 - Explain the difference between horizontal scaling (scaling out) and vertical scaling (scaling up).
-vertical: increase power of a single machine, simple to implement.
-horizental: high availability and more machines, gets more power and reliability.
+vertical: increase power of a single server, simple to implement.
+horizental: high availability and more servers, gets more power and reliability.
 
 - How does MongoDB handle transactions and ACID properties?
 MongoDB is always ACID for single-document operations.
