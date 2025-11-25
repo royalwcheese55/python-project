@@ -5,8 +5,9 @@ def sum(a: int, b: int) -> int:
 print(sum(1, 2))
 # print(sum('1', '2'))
 
-name: str = '123'
+name: str = 'Steven'
 age: int = 25
+
 price: float = 19.9
 is_acive: bool = True
 # print(sum('1', '2'))
