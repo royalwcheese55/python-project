@@ -3,18 +3,30 @@
 ## Concept Questions
 
 - What is Django's MTV pattern? 
+model(data and logic) template(ui like {{}}) and view(handle request)
 
 - What's the difference between blank=True and null=True?
+null: apply to database and column allowed to store null
+blank: field allow to be empty in forms, apply to forms and django admin validation
 
 - What's the difference between auto_now and auto_now_add?
+add: update only at creation
+now: update everytime the object is saved
 
 - What are Django migrations and why are they important?
+Django migrations are how Django translates model changes into database schema changes.
+They ensure your database structure stays correct, consistent, and version-controlled.
 
 - What is the N+1 query problem? How to avoid it in Django
+n+1: Django executes 1 query to get a list, then N more queries inside a loop for related objects.
+fix: select_related() for FK / OneToOne (single object)
+prefetch_related() for ManyToMany / reverse FK (multiple objects)
 
 - What is the Meta class in Django models?
+configure model level setting like table names and constraints, customize how django interact with model.
 
 - What's the purpose of __str__() method in models?
+makes model instances readable by returning a meaningful text description.
 
 
 ## Coding Challenge:

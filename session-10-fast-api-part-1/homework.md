@@ -7,9 +7,9 @@ def runs in threadpool, good for blocking operations, use when code is synchrono
 async def run on async event loop, best for non-block i/o, use when your code is asynchronous and uses await.
 
 - What is dependency injection in FastAPI and how does it work behind the scene?
+it let you create reusable logic. 
 a system that lets you declare requirements (dependencies) for your route handlers, and FastAPI will:
 Create and Manage their lifecycle, Inject them into your function automatically.
-it let you create reusable logic. 
 
 - How does FastAPI achieve automatic API documentation?
 Reading Python type hints and Pydantic models
