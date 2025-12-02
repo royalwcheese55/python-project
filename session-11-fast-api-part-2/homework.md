@@ -8,8 +8,8 @@ httpx → async-compatible, non-blocking, supports concurrency, recommended
 FastAPI is async-first → so httpx.AsyncClient is the correct choice for outbound HTTP calls
 
 - What are the key differences in the database URL connection string when migrating from sync SQLAlchemy to async SQLAlchemy, and what driver changes are required for PostgreSQL?
-Sync → postgresql+psycopg2://...
-Async → postgresql+asyncpg://... and create_async_engine().
+Sync → postgresql+psycopg2://... from sqlalchemy import create_engine
+Async → postgresql+asyncpg://... from sqlalchemy.ext.asyncio import create_async_engine
 
 - What is ASGI (Asynchronous Server Gateway Interface) and how does it differ from WSGI?
 WSGI is synchronous and handles only traditional HTTP.
@@ -41,7 +41,7 @@ Raises 401 if invalid
 Injects current user into route
 
 - How does FastAPI handle synchronous functions differently?
-FastAPI detects synchronous def route handlers and automatically runs them in a threadpool so they do not block the main async event loop. This allows sync code (like SQLAlchemy, file I/O, blocking APIs) to coexist with async code without hurting performance.
+FastAPI detects synchronous def route handlers and runs them in a threadpool so they do not block the main async event loop. This allows sync code to coexist with async code without hurting performance.
 
 
 ## Coding Challenge:

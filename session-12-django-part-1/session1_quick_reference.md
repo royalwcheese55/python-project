@@ -4,7 +4,7 @@
 
 ```bash
 # Create virtual environment
-uv .venv
+uv venv .venv
 # Activate (Mac/Linux)
 source .venv/bin/activate
 
