@@ -3,20 +3,36 @@
 ## Concept Questions
 
 - Explain the WebSocket protocol and how it differs from HTTP polling and long polling
+websocket: full-time, persistent communication protocol between client and server.
+http polling: client repeatedly send request and server have to answer each time
+long polling: server holds until new data but client have to reconnect
+WebSockets deliver true real-time communication with minimal overhead.
 
 - What caching strategy would you use for frequently accessed but slowly changing data
+cache-aside cuz data used very often and does not change fast dont need to read the database every time, also could use TTL to give fresh data and performance.
 
 - Explain the difference between cache-aside, write-through, and write-behind caching patterns
-
+cahce-aside: lazy loading, app check cache first, if miss check db and write into cache. (frequent use, slow changing data)
+write-through: on everywrite write to cache, cache sync to db. (strong consistency, like user profile)
+write-behind caching: write only goes to cache, cache buffers update, async to db (High-write systems where perfect real-time DB consistency is not critical)
+··
 - Describe the differences between RabbitMQ, Kafka, and SQS in terms of use cases and guarantees
+RabbitMQ → flexible message broker for job queues.
+Kafka → high-throughput event streaming with message replay.
+SQS → simple managed queue for decoupling services.
 
 - What are message queues and why are they important in distributed systems?
+it allow server to communicate efficiently, asynchronously, producer send and message store in queue, consumer process when its ready. it's reliable and scalable.
 
 - How would you implement a retry mechanism with exponential backoff for failed message processing?
+I would implement a retry mechanism with exponential backoff by tracking the number of retry attempts for each message, and on failure, re-queue the message with a delay that grows exponentially (e.g., 1s, 2s, 4s, 8s…), up to a max retry limit. After that, I send it to a dead-letter queue. I’d also add jitter to avoid many messages retrying at the same time and make sure the processing is idempotent.
 
 - Explain the concept of dead letter queues and when you'd use them
+dlq is a queue that the message sent to when they cant be proccessed after several attempts.
+use it when:  You have retry mechanisms, want to prevent message loss, need monitoring and alerting.
 
 - How does FastAPI handle synchronous functions differently?
+FastAPI runs sync functions in a separate thread so they don’t block the async event loop.
 
 ## Coding Question
 

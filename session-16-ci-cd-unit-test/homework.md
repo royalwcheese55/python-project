@@ -3,14 +3,32 @@
 ## Concept Questions
 
 - What's the difference between unit tests, integration tests, and end-to-end tests? When would you use each?
+unit: test small piece like a function or method, use when during development and test logic
+integration: test multiple components work together like app + db, api + cache, use when testing db interactions.
+E2E; entire system for user perspective, use when before release, and verify critical flows.
 
 - Explain the purpose of mocking in unit tests. What's the difference between Mock, MagicMock, and patch in Python's unittest.mock?
+used in unit tests to replace real dependencies (DB, API calls, files, network, time, etc.) with fake objects so you can test your code in isolation.
+mock is the basic mock set attribute and return value, magicmock is mock with magic methods predefined(__len__, __str__) use when code needs. patch is used to temporarily replace an object at a specific import path during a test such as a function or a class.
 
 - Explain test coverage. What's a good coverage percentage to aim for?
+Test coverage is a metric that measures how much of your code is executed when your tests run.
+Common types include:
+Line coverage → % of lines executed
+Branch coverage → % of if/else paths tested
+Function coverage → % of functions called
+Statement coverage → % of statements executed
+80% is a good coverage to aim for
 
 - How do you handle testing code that involves database operations? What strategies can you use to avoid hitting real databases?
+eparate unit tests and integration tests.
+In unit tests, I avoid hitting a real DB by mocking the database layer (e.g., repository/ORM calls) or using fakes/in-memory stores.
+For integration tests, I use a real test database (or in-memory DB) with migrations and roll back transactions after each test.
+This keeps unit tests fast and pure, while still verifying the real DB behavior separately.
 
 - What's test-driven development (TDD)?
+Test-driven development (TDD) is a software development process where you write tests before writing the actual code, following a tight cycle of:
+Red → Green → Refactor.
 
 - Explain the typical stages in a CI/CD pipeline. What happens in each stage?
 
@@ -19,7 +37,7 @@
 - Explain the roles in Scrum: Product Owner, Scrum Master, and Development Team. What are each person's responsibilities?
 
 
-## Coding Challenge:
+## Coding Challenge: 
 ## Challenge: Unit Testing, CI/CD, and Deployment for FastAPI Note App
 
 **Description:**

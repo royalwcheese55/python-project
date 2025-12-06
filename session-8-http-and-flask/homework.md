@@ -19,7 +19,7 @@ a style of web architecture that uses a set of constraints to allow for communic
 HyperText Transfer Protocol,, communication protocal for transfer data between client and server. client send request and server run backend logic and send back response .
 
 - Explain the concept of idempotency in HTTP methods
-dempotency = repeated requests do not change the final result.
+idempotency = repeated requests do not change the final result.
 GET, PUT, DELETE are idempotent; POST is not.
 
 - Explain the difference between HTTP and HTTPS

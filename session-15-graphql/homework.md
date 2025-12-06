@@ -3,18 +3,30 @@
 ## Concept Questions
 
 - What is GraphQL and how does it differ from REST? What problems does it solve?
+GraphQL is a flexible query language that lets clients request the data they need from a single endpoint, solving REST’s problems of over-fetching, under-fetching, and multiple roundtrips.
 
 - What is the N+1 query problem in GraphQL and how can it be resolved?
+happens when GraphQL fetches a list with one query and then issues a separate query for each item in that list. This causes performance issues. we use dataloader to solve it.
 
 - Describe the difference between nullable and non-nullable fields in GraphQL. How do you denote them in the schema?
+nullable field: is a default in graphql, all field can be null.
+non nullable: must always return a value, if not then error.
+it is for data consistency.
 
 - What is the DataLoader pattern and why is it important for GraphQL performance?
+Batching many similar data-fetch requests into a single query
+Caching results during a request to avoid duplicate DB lookups
+it prevent n+1 query, improve performance.
 
 - What are GraphQL fragments and when would you use them?
+is a reusable selection of fields that you can include in multiple queries.
+use case: multiple query request in same field, long query or repetitive
 
 - How would you implement pagination in a Python GraphQL API?
+Python resolver using either offset/limit (simpler, good for small/medium lists) or cursor-based pagination, return metadata like hasNextPage and endCursor.
 
 - How do you handle errors and exceptions in GraphQL resolvers?
+throw errors in resolvers, letting GraphQL return partial data plus an errors array; I use structured errors (GraphQLError with extensions) for business cases
 
 
 ## Coding Challenge:

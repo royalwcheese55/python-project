@@ -25,6 +25,8 @@ response_model_include returns only selected fields from that model.   You want 
 response_model_exclude returns all fields except the ones listed.   You want most fields but need to hide a couple.
 
 - How do you implement JWT authentication in FastAPI
+Login → create JWT → return token → user sends token → verify → allow access
+
 User logs in with username/password.
 If credentials are valid, server creates a JWT:
 Signed with a secret key
