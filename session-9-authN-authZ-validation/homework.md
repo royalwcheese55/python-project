@@ -19,7 +19,7 @@ The server generates it after login, the client sends it with each request, and 
 
 - What are the advantages and disadvantages of using JWT compared to traditional session-based authentication?
 pro: jwt is statless, no server side storage and it's faster, all user info is contained within the token and its portable.
-con: can't be revoke easily, can be large, security risk if stored incorrect, complex implementation.
+con: can't be revoke easily, can be large, security risk if stored incorrect, complex implementation. can't logoff.
 
 - How do you invalidate or blacklist JWT tokens?
 Blacklist/Denylist: store token IDs (jti) in Redis/DB and reject them on each request.

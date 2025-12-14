@@ -31,10 +31,25 @@ Test-driven development (TDD) is a software development process where you write 
 Red → Green → Refactor.
 
 - Explain the typical stages in a CI/CD pipeline. What happens in each stage?
+ci/cd: building/testing/deploying code, it has 5 main stages
+1- source/version controal, dev push code to git, pipeline trigger automatically
+2- build stage, install dependencies and package application
+3- test stage, run unit/integration test and security scans to catch bug early
+4- predeploy stage, deploy staging env mimic the production to validate code before go live
+5- deploy stage, release code
 
 - What's the purpose of environment variables and secrets management in CI/CD? How do you handle sensitive data?
+Environment variables let you configure your application without hard-coding values in code. same code work in different environment
+Secrets = sensitive values that must stay private: password, api key, jwt key, cloud credentials, it is to make sure they are encrypted and not stored in code
+Never store secrets in the code repo, Use a dedicated secrets manager like github secrets and aws secrets manager, Use environment variables at runtime and restrick access.
+
 
 - Explain the roles in Scrum: Product Owner, Scrum Master, and Development Team. What are each person's responsibilities?
+PO Owns and prioritizes the Product Backlog, Makes decisions about scope, priority, and product direction, decides what features to build and in what order.
+
+SM Ensures the team follows Scrum framework correctly, Removes blockers / impediments ensures the team is productive by teaching Scrum and removing roadblocks.
+
+Dev Build the product (coding, testing, designing, documenting), maintain quality does the actual work and decides how to build the product.
 
 
 ## Coding Challenge: 

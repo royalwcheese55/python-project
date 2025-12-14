@@ -30,7 +30,7 @@ A closure is a nested function that captures variables from its enclosing scope 
 different from a normal nested function because it preserves state between calls
 
 * What is the purpose of `if __name__ == "__main__":`?
-is used to control the execution of code when a Python file is run directly vs. when it is imported as a module.
+is used to control the execution of code when a Python file is run directly vs when it is imported as a module.
 
 * Can you modify a global variable inside a function without using the `global` keyword?
 No, you can’t reassign a global variable inside a function without using the global keyword — Python treats that variable as local. But you can modify a mutable global object (like a list or dict) without declaring it global, since you’re changing the object’s contents, not the reference.”
