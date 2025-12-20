@@ -17,9 +17,9 @@ write-through: on everywrite write to cache, cache sync to db. (strong consisten
 write-behind caching: write only goes to cache, cache buffers update, async to db (High-write systems where perfect real-time DB consistency is not critical)
 ··
 - Describe the differences between RabbitMQ, Kafka, and SQS in terms of use cases and guarantees
-RabbitMQ → flexible message broker for job queues.
-Kafka → high-throughput event streaming with message replay.
-SQS → simple managed queue for decoupling services. aws simple queue service, cloud server for aws.
+RabbitMQ is a message broker — a system that lets different applications send messages to each other asynchronously using queues.
+Kafka is a distributed event streaming platform used to store, process, and transmit real-time data streams at massive scale.
+Amazon SQS (Simple Queue Service) is a message queue service that allows applications to communicate asynchronously by sending and receiving messages through queues.
 
 - What are message queues and why are they important in distributed systems?
 it allow server to communicate efficiently, asynchronously, producer send and message store in queue, consumer process when its ready. it's reliable and scalable.

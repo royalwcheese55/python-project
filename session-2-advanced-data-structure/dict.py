@@ -8,6 +8,7 @@ empty = {}
 # accessing value
 print(person["name"])
 print(person.get("age"))
+print(person["age"])
 # print(person["country"]) # raise error
 print(person.get("country"))
 print(person.get("country", "China"))

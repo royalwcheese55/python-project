@@ -41,8 +41,8 @@ Customize:
 Override RequestValidationError with @app.exception_handler
 
 - Explain the difference between using Annotated[Session, Depends(get_db)] vs Session = Depends(get_db) for type hints. Which is recommended and why?
-old: Session = type hint
-= Depends(get_db) = also used as the default value
+Session = type hint
+Depends(get_db) = also used as the default value
 anootated: Session = pure type
 Depends(get_db) = metadata attached via Annotated
 No default value hack
