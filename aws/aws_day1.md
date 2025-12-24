@@ -5,6 +5,7 @@ Single-node databases scale vertically and quickly hit CPU, memory, storage, and
     
 2. What problems do distributed systems solve, and what new challenges do they introduce?
 Distributed systems solve scalability, performance, and fault tolerance, but introduce new challenges like network unreliability, consistency problems, hard transactions, complex debugging, and higher operational overhead.
+(A distributed system is a collection of independent computers (nodes) connected by a network that work together)
 
 3. Compare OLTP and OLAP systems. What are their design goals(online transaction/ analytical processing)
 OLTP is optimized for fast, concurrent transactional workloads with strict consistency, while OLAP is optimized for large-scale analytical queries and historical reporting using de-normalized, read-optimized schemas.
@@ -26,7 +27,8 @@ Batch processing analyzes large datasets periodically with high latency, while s
 
 8. What is the purpose of Star Schema and Snowflake Schema in data warehousing? Which one is generally preferred for BI workloads, and why?
 Both schemas model data for analytics, but star schema uses denormalized dimensions while snowflake schema normalizes them.
- Star schema is preferred for BI because it requires fewer joins, offers faster queries, is easier to understand, and aligns well with OLAP engines and BI tools.
+Star schema is preferred for BI because it requires fewer joins, offers faster queries, is easier to understand, and aligns well with OLAP engines and BI tools.
+a simple data model for data warehouses, featuring a central fact table (containing numerical metrics like sales, clicks) surrounded by dimension tables (describing entities like time, products, customers), resembling a star
 
 
 
