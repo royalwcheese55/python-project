@@ -2,7 +2,8 @@ import csv
 from app.db.database import SessionLocal
 from app.models.store import Store
 
-CSV_PATH = "data/stores_50.csv"
+import sys
+CSV_PATH = sys.argv[1] if len(sys.argv) > 1 else "data/stores_50.csv"
 
 def import_stores():
     db = SessionLocal()

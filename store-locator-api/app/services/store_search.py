@@ -2,6 +2,7 @@ import math
 from datetime import datetime
 from geopy.distance import geodesic
 from app.models.store import Store
+from app.core.geo import bounding_box, haversine_miles
 
 def bounding_box(lat: float, lon: float, radius_miles: float):
     lat_delta = radius_miles / 69.0
@@ -57,7 +58,7 @@ def search_stores(db, lat: float, lon: float, radius_miles: float, services=None
     required_services = set(services or [])
 
     for s in candidates:
-        dist = geodesic((lat, lon), (s.latitude, s.longitude)).miles
+        dist = haversine_miles(lat, lon, s.latitude, s.longitude)
         if dist > radius_miles:
             continue
 

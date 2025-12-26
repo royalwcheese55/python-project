@@ -9,6 +9,8 @@ class StoreSearchRequest(BaseModel):
     services: Optional[List[str]] = None
     store_types: Optional[List[Literal["flagship","regular","outlet","express"]]] = None
     open_now: Optional[bool] = None
+    limit: int = Field(20, ge=1, le=100)
+    offset: int = Field(0, ge=0)
 
 class StoreResult(BaseModel):
     store_id: str
@@ -30,4 +32,7 @@ class StoreResult(BaseModel):
 class StoreSearchResponse(BaseModel):
     location: dict
     applied_filters: dict
+    total: int
+    limit: int
+    offset: int
     results: List[StoreResult]
