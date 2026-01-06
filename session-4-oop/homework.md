@@ -21,7 +21,7 @@ while a @staticmethod is a utility function inside a class that doesn’t access
 * What are property decorators in Python?
 is used to turn a method into a read-only attribute —
 so you can access it like a variable, but it actually runs code behind the scenes.
-@property, @<name>.setter, @<name>.deleter
+@property, @<name>.setter, @<name>.deleter @<something>.getter
 
 * What's the difference between public, protected (`_`), and private (`__`) attributes?
 Public attributes are freely accessible, _protected ones signal ‘for internal use,’ and __private ones are name-mangled to prevent accidental external access
@@ -38,6 +38,7 @@ To refer to instance attributes and methods inside the class.
 * What are abstract base classes (ABC) in Python?
 define a common interface and enforce that subclasses implement specific methods.
 They’re created using the abc module with the ABC base class and the @abstractmethod decorator.
+a class that cannot be instantiated on its own and serves as a blueprint for other classes
 ---
 
 ## Coding Questions

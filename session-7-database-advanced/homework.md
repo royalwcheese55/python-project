@@ -17,7 +17,7 @@ isolation: Transactions don’t interfere with each other.
 durability: Data is safe after commit.
 
 - Explain the CAP theorem.
-consistency: All nodes see the same data at the same time.
+consistency: same data with same nodes.
 avalability: Every request gets a response, even if it’s not the latest data.
 partition tolerance: The system continues working even if network between nodes fails
 you can only get two out of three from CAP.

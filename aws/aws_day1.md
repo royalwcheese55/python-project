@@ -29,6 +29,3 @@ Batch processing analyzes large datasets periodically with high latency, while s
 Both schemas model data for analytics, but star schema uses denormalized dimensions while snowflake schema normalizes them.
 Star schema is preferred for BI because it requires fewer joins, offers faster queries, is easier to understand, and aligns well with OLAP engines and BI tools.
 a simple data model for data warehouses, featuring a central fact table (containing numerical metrics like sales, clicks) surrounded by dimension tables (describing entities like time, products, customers), resembling a star
-
-
-

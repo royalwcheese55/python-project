@@ -8,7 +8,7 @@ its a higher order function to help reuse the code, it wraps another function or
 generator return one at a time using yield, return just return the whole list.
 
 - When would you choose generators over lists, and what are the memory implications?
-when you want faster and less memory, generator use O(n)
+when you want faster and less memory, generator use O(n). 
 
 - Explain the difference between threading, multiprocessing, and asyncio in Python
 threading: Runs multiple threads within one process. Good for I/O-bound tasks (network, disk).

@@ -7,8 +7,16 @@ A transaction is all-or-nothing. Either all operations in the transaction comple
 ### Consistency
 Transactions move the database from one valid state to another, maintaining all defined rules, constraints, and relationships. The database never ends up in an inconsistent state.
 
+A banking system has a rule (constraint) that an account balance cannot go below zero (no overdrafts allowed). 
+If someone attempts to withdraw $500 from an account that only has $300, the system checks this constraint. Because the withdrawal would violate the business rule, the transaction is disallowed and rolled back, ensuring the database remains in a consistent state where no account holds a negative balance
+
 ### Isolation
-Concurrent transactions don't interfere with each other. Each transaction executes as if it's the only one running, even when multiple transactions are happening simultaneously.
+Isolation ensures that a new transaction, accessing a particular record, waits until the previous transaction finishes before it commences operation. It ensures that concurrent transactions do not interfere with each other
+
+User A finds the last ticket and starts the purchase process. Their transaction (let's call it Transaction A) begins.
+Simultaneously, User B also tries to buy a ticket for the same concert. Their transaction (Transaction B) begins. 
+Without Isolation:
+If there were no isolation, both users might see the "1 ticket available" status, both proceed to the payment stage, and both might successfully complete their purchase because the other's actions weren't hidden. The database would then be in an inconsistent state, having sold two tickets when only one existed. 
 
 ### Durability
 Once a transaction is committed, it's permanent. Even if the system crashes immediately after, the changes persist
