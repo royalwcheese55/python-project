@@ -21,6 +21,7 @@ Slides: https://docs.google.com/presentation/d/e/2PACX-1vSxS5iMjTveO-IBqdDE65dgo
 
 - 4xx - Client Errors
   400 Bad Request - Invalid data
+  401 Unauthorized request
   404 Not Found   - Resource doesn't exist
 
 - 5xx - Server Errors

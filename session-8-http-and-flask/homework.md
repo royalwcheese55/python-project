@@ -3,10 +3,10 @@
 ## Concept Questions
 
 - How does routing work in Flask?
-Flask uses decorators to map URLs (routes) to Python functions (views).
+In Flask, routing is the mechanism that maps a URL path to a specific Python function, known as a view function, that handles the web request and returns a response. It is primarily implemented using the @app.route() decorator. 
 
 - What is restful service
-a style of web architecture that uses a set of constraints to allow for communication between a client and a server over a network
+a way for different software systems to communicate over the internet using standard HTTP protocols, treating data as "resources" that can be requested and manipulated via URLs and simple commands (GET, POST, PUT, DELETE)
 
 - What are the categories of HTTP status codes (1xx, 2xx, 3xx, 4xx, 5xx)? Provide examples for each.
 1xx: Informational 100 continue sending request
@@ -24,10 +24,12 @@ GET, PUT, DELETE are idempotent; POST is not.
 
 - Explain the difference between HTTP and HTTPS
 http: Data is sent in plain text 
-https: secure, encrypted version of HTTP that protects data with TLS/SSL.
+https: secure, encrypted version of HTTP that protects data with TLS/SSL. 
+SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols that secure internet communication, encrypting data between a user's browser and a website server, preventing eavesdropping, and ensuring data integrity
 
 - Design a RESTful API for a blogging platform
 Design resources as /users, /posts, /comments, use standard HTTP verbs for CRUD, JWT for auth, and support pagination/filtering on list endpoints.
+The primary resources in a blogging platform are Users, Posts, and Comments. Other potential resources might include Tags, Categories, and Media.
 
 - What is the MVC architecture
 model(data and logic) view(ui) controller(user input and request)

@@ -3,7 +3,7 @@ def sum(a: int, b: int) -> int:
     return a + b
 
 print(sum(1, 2))
-# print(sum('1', '2'))
+print(sum('1', '2'))
 
 name: str = 'Steven'
 age: int = 25

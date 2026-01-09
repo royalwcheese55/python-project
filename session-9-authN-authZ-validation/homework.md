@@ -12,6 +12,7 @@ Session Management (MOST COMMON) Used to identify logged-in users.
 
 - What are the limitations of cookies
 small size 4kb, auto send with every request, security risk, browser limit on cookie per domain, They’re mainly for small pieces of state like session IDs, not for large or sensitive data.
+Cookie limitations include privacy concerns (tracking users across sites), security vulnerabilities (session hijacking, XSS), technical constraints (small size limits, domain restrictions), and performance impacts (increased bandwidth from sending with every request).
 
 - What is JWT and how does it work?
 json web token, signed token used for authentication. It contains a header, payload, and signature.
@@ -24,6 +25,7 @@ con: can't be revoke easily, can be large, security risk if stored incorrect, co
 - How do you invalidate or blacklist JWT tokens?
 Blacklist/Denylist: store token IDs (jti) in Redis/DB and reject them on each request.
 User token versioning: store a version in the DB and in the token; bump the version to invalidate all existing tokens for that user.
+You invalidate JWTs by creating a server-side blacklist (often in Redis) storing revoked token IDs (JTIs) or hashes, checking this list on every request before granting access, or by using shorter token lifespans and managing refresh tokens.
 
 - What is password hashing and why is it important?
 process of converting a plaintext password(like "mypassword123")
@@ -36,7 +38,10 @@ refresh token is long lived and it's keeping the user logged in, it's secured, a
 - What is the Oauth2 flow
 authorization protocol
 → It lets a user give a third-party app limited access to their resources without sharing their password.
-
+Resource Owner: The user who owns the data (e.g., your Google account).
+Client: The application requesting access (e.g., a photo printing app).
+Authorization Server: Verifies the user's identity and issues access tokens (e.g., Google's sign-in page).
+Resource Server: Hosts the protected data/API (e.g., Google Photos API). 
 ---
 
 ## Coding Challenge:
