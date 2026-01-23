@@ -21,7 +21,7 @@ M:N → Bridge table with two FKs
 - What are transactions and isolation levels? Explain the problems each isolation level solves.
 Read Uncommitted: dirty reads allowed
 Read Committed: no dirty reads
-Repeatable Read: no dirty reads, no non-repeatable reads
+Repeatable Read: no dirty reads, no non-repeatable reads if a transaction reads a row, it will see the same data throughout the enttire transaction even if other transactions modify that row
 Serializable: no anomalies at all
 A transaction is a group of SQL operations that execute as one atomic unit — either all succeed or all fail.
 

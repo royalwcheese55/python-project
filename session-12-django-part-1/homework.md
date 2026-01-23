@@ -6,12 +6,15 @@
 model(data and logic) template(ui like {{}}) and view(handle request)
 
 - What's the difference between blank=True and null=True?
-null: apply to database and column allowed to store null
-blank: field allow to be empty in forms, apply to forms and django admin validation
+null=True (Database-level): Defines if a given database column will accept NULL values. If True, Django will store empty values as NULL in the database.
+blank=True (Validation-level): Defines if the field is allowed to be empty during form validation (e.g., when calling form.is_valid() or in the Django Admin). 
+
 
 - What's the difference between auto_now and auto_now_add?
-add: update only at creation
-now: update everytime the object is saved
+auto_now_add=True sets a timestamp only when a model instance is first created (ideal for created_at)
+auto_now=True updates the timestamp every time the object is saved (perfect for updated_at), 
+with both options being mutually exclusive and automatically managing date/time fields for auditing and tracking. 
+
 
 - What are Django migrations and why are they important?
 Django migrations are how Django translates model changes into database schema changes.
