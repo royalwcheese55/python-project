@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from models import Post
 
+
 async def batch_load_posts(user_ids):
     '''
     input :[1, 2, 3, 4]

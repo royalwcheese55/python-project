@@ -27,12 +27,6 @@ Once a transaction is committed, it's permanent. Even if the system crashes imme
 ### C - Consistency
 Every read receives the most recent write or an error. All nodes see the same data at the same time.
 
-| Model | Consistency | Availability | Latency | Use Case |
-|-------|-------------|--------------|---------|----------|
-| Strong | Highest | Lowest | Highest | Financial systems |
-| Eventual | Medium | Highest | Low | Social media |
-| Weak | Lowest | Highest | Lowest | Real-time streaming |
-
 ### A - Availability
 Every request receives a response (success or failure), even if some nodes are down. The system continues operating without complete data.
 

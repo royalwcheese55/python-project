@@ -1,0 +1,53 @@
+1. check what changes, like data growth or query pattern, any recent deployment changes.
+check for bad join orders and check top wait events like is it cpu or io. check is it plain database connection or hot cache issue.
+
+clustered is ordered by key, non-clustered index is not, it is a row pointer.
+
+if it is low sensitivity, means that if it returns too many rows, or outdated data.
+
+sharding is spreadout to many computers, sharding split rows between multiple db nodes
+ partitioning is just split columns into 2 tables, sharding is necessary when single node can't handle.
+
+n + 1 is one query load a parent row, and then more query load children rows, which is slow
+we can use select_related to fix it. or joined_load
+
+atomicity/ consistency/ isolation/ durability
+all or nothing/ data schema remain the same/ concurrent tx dont interfere/ transactions survive even theres crash
+
+consistecy is relaxed in nosql to achieve availability.
+
+2. we use describe pod, and check the events and logs and verify the config.
+
+readiness check if it can receive traffic, if not then remove from endpoint
+liveness check if the service still healthy, if not then remove from endpoint
+service have a label selector and the controller maintain endpoints/ slices, and k8 route service to those endpoints.
+
+secret has rbac, it is accesse controlled, docker environment might leak it.
+
+deployment: is stateless and random name, easy scaling
+stateful: stable identity, strong storage and ordered rollout.
+we use stateful for database kafka/ redis the ones that need stable identity.
+
+Set terminationGracePeriodSeconds
+
+3. we can use ttl to set random live time so that popular cache dont die in the same time and use circuit breaker to protect database for hot connections.
+
+cache aside means that whenever theres a request we check the cache first if cache miss we check db and print it in cache.
+Read-Through (cache loads from DB):
+Pros: cache handles miss loading
+Cons: more infra complexity, cache becomes critical path
+Write-Behind (async write to DB):
+Pros: high write throughput
+Cons: risk of data loss, eventual consistency, harder debugging
+
+yes it is, we use db as source of truth and invalidate cache after db commit and use versioning to avoid stale overwrite
+
+when memory is maxed redis evicts keys based on policy.
+allkeys-lru: evicts least recent used keys
+volatile-ttl: evict keys that have ttl, the shortest one first.
+
+distributed lock using redis to ensure only one worker 
+
+Publish invalidation events (Kafka/pubsub) to all regions
+Use versioned keys (e.g., product:123:v17) so old values naturally drop
+
