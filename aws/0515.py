@@ -66,7 +66,8 @@ cost reduction supervisor downgrad save -30%
 sub agent downgrad save -40%
 tool rag save 20% cost complexity
 
-prompt caching save 10% cost minimal
+prompt caching save 10% cost minimal     
 
 
 '''
+

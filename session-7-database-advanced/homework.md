@@ -8,7 +8,7 @@ View → virtual query, always fresh. a saved SQL query that shows data from bas
 Materialized View → stored snapshot of a query, faster but needs refresh everytime
 
 - What is ORM? Why do we need ORM?
-object relational mapping, lest u use python object to interact with database instead of sql. let you switch between Postgres, MySQL, SQLite without changing code.
+object relational mapping, let u use python object to interact with database instead of sql. let you switch between Postgres, MySQL, SQLite without changing code.
 
 - Explain the ACID properties. How do they ensure database reliability?
 atomicity: all success or all failed, no partial updates.

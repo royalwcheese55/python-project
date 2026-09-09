@@ -18,10 +18,10 @@ Simultaneously, User B also tries to buy a ticket for the same concert. Their tr
 Without Isolation:
 If there were no isolation, both users might see the "1 ticket available" status, both proceed to the payment stage, and both might successfully complete their purchase because the other's actions weren't hidden. The database would then be in an inconsistent state, having sold two tickets when only one existed. 
 
-### Durability
+## Durability
 Once a transaction is committed, it's permanent. Even if the system crashes immediately after, the changes persist
 
-
+     
 ## CAP
 
 ### C - Consistency
